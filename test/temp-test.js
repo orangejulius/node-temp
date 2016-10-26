@@ -52,6 +52,7 @@ temp.open('bar', function(err, info) {
 
 
 var stream = temp.createWriteStream('baz');
+console.log(stream.path);
 assert.ok(stream instanceof fs.WriteStream, 'temp.createWriteStream did not invoke the callback with the err and stream object');
 stream.write('foo');
 stream.end("More text here\nand more...");
